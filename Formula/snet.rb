@@ -1,13 +1,13 @@
 class Snet < Formula
   desc 'Secure HTTPS tunnels from localhost to public URLs'
   homepage 'https://github.com/sethhorsley/snet-cli'
-  version '0.1.2'
+  version '0.1.3'
   license 'MIT'
 
   on_macos do
     if Hardware::CPU.arm?
-      url 'https://github.com/sethhorsley/snet-cli/releases/download/v0.1.2/snet-darwin-arm64.tar.gz'
-      sha256 '7919dc18264ade005c482be83a0ba012f5ff1f66f4464bfae3ce57209dd778fb'
+      url 'https://github.com/sethhorsley/snet-cli/releases/download/v0.1.3/snet-darwin-arm64.tar.gz'
+      sha256 '2d5050c41e41967fabe61f8ad6f62f4e54b0bb821391e3752229dc87e7417777'
     else
       url 'https://github.com/sethhorsley/snet-cli/releases/download/v0.1.1/snet-darwin-amd64.tar.gz'
       sha256 'f13137d137488a51bd7bac2c07c554746dddfa5418afd010d4569ff864c860d6'
