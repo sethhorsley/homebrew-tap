@@ -1,42 +1,34 @@
 class Snet < Formula
-  desc 'Secure tunneling CLI for exposing local services to the internet'
-  homepage 'https://github.com/sethhorsley/snet-cli'
-  version '0.1.1'
-  license 'MIT'
+  desc "Secure HTTPS tunnels from localhost to public URLs"
+  homepage "https://github.com/sethhorsley/snet-cli"
+  version ""
+  license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/sethhorsley/snet-cli/releases/download/v#{version}/snet-darwin-arm64"
-      sha256 '65c148459a139f59263102ad6596a35ae5c717286de48536d4f21af089f29df9'
+      url "https://github.com/sethhorsley/snet-cli/releases/download//snet-darwin-arm64.tar.gz"
+      sha256 "e2ec7215d5b8786aa044f8b449560de6cc0e11403b6f6625064c24d4b7d36c94"
     else
-      url "https://github.com/sethhorsley/snet-cli/releases/download/v#{version}/snet-darwin-amd64"
-      sha256 '3f0d0ad74718177248bbc06f0c9c7716dd7ba50caa0949776fe358f0ba3a8477'
+      url "https://github.com/sethhorsley/snet-cli/releases/download//snet-darwin-amd64.tar.gz"
+      sha256 "8967967b1506ad38eb4dd2a003d96e3d35975422ce82c55a56ffdddc98058f20"
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/sethhorsley/snet-cli/releases/download/v#{version}/snet-linux-amd64"
-      sha256 'a6daa5c7926cb3c46664f06a9ffc947b913738b2ff226d153467d13c9c6230c6'
+    if Hardware::CPU.arm?
+      url "https://github.com/sethhorsley/snet-cli/releases/download//snet-linux-arm64.tar.gz"
+      sha256 "13191da4b3d577d132f8b2e21a038826a1f4ef5727a4d144a211d384de2ef3cd"
+    else
+      url "https://github.com/sethhorsley/snet-cli/releases/download//snet-linux-amd64.tar.gz"
+      sha256 "bbe4f788a45718bc9f125c10b3fa0d196c24a2cc6a2ffa2eed51399f69c015e4"
     end
   end
 
   def install
-    binary_name = 'snet'
-    on_macos do
-      binary_name += if Hardware::CPU.arm?
-                       '-darwin-arm64'
-                     else
-                       '-darwin-amd64'
-                     end
-    end
-    on_linux do
-      binary_name += '-linux-amd64'
-    end
-    bin.install binary_name => 'snet'
+    bin.install "snet"
   end
 
   test do
-    system "#{bin}/snet", 'version'
+    assert_match version.to_s, shell_output("#{bin}/snet version")
   end
 end
