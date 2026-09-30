@@ -1,6 +1,6 @@
 cask "microbot" do
-  version "0.1.1"
-  sha256 "0704d159d119c2ed7217fa57ce912a8a08a10efb94a68b4053107b7506b646e3"
+  version "0.1.2"
+  sha256 "ffa1b1ab4910c84dd6314db67779ded3e87f62439a5aab0f59d3abc782c9e0cd"
 
   url "https://github.com/sethhorsley/homebrew-tap/releases/download/microbot-v#{version}/Microbot_#{version}_aarch64.dmg"
   name "Microbot"
@@ -9,6 +9,8 @@ cask "microbot" do
 
   depends_on arch: :arm64
   depends_on macos: :monterey
+
+  auto_updates true
 
   app "Microbot.app"
 end
