@@ -1,6 +1,6 @@
 cask "microbot" do
-  version "0.1.0"
-  sha256 "480c2085b4a425d93d0b60100d0cbbde0191ad3ad425f2baf3de44152d083c35"
+  version "0.1.1"
+  sha256 "0704d159d119c2ed7217fa57ce912a8a08a10efb94a68b4053107b7506b646e3"
 
   url "https://github.com/sethhorsley/homebrew-tap/releases/download/microbot-v#{version}/Microbot_#{version}_aarch64.dmg"
   name "Microbot"

@@ -9,9 +9,8 @@ and macOS Monterey (12) or later.
 brew install --cask sethhorsley/tap/microbot
 ```
 
-This initial release is ad-hoc signed, not Apple-notarized. After attempting
-to open Microbot, allow it in System Settings → Privacy & Security → Open Anyway
-if macOS blocks it. Allow microphone access when prompted.
+Releases from 0.1.1 are Developer ID signed and Apple-notarized.
+Allow microphone access when prompted.
 
 Update with `brew update && brew upgrade --cask microbot`.
 Recordings are stored in `~/Documents/Microbot/recordings` and are retained
